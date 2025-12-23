@@ -1,0 +1,377 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf4fa;
+      color: #4a3b4f;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(135deg, #e6c7f5, #f7c1dd);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5b2b6f;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #f3d9f4;
+      padding: 0.5rem 0;
+      min-width: 150px;
+    }
+
+    nav li:hover ul {
+      display: block;
+    }
+
+    nav li ul li {
+      width: 100%;
+    }
+
+    nav li ul li a {
+      color: #4a235a;
+    }
+
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #5b2b6f;
+      transition: 0.3s;
+    }
+
+    main {
+      margin-top: 90px;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      max-width: 90%;
+      color: #4a235a;
+      font-family: 'Brush Script MT', cursive;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: clamp(0.8rem, 2vw, 1.5rem);
+      text-align: left;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 0.4rem;
+      color: #9b59b6;
+    }
+
+    .hero-text p {
+      font-size: clamp(1rem, 2.8vw, 1.3rem);
+      color: #9b59b6;
+    }
+
+    .hero section {
+      padding: 2rem 1.5rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      background-color: #f6e7fa;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #4a235a;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .pasteles-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bocaditos-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .catalogo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card,
+    .comment-card,
+    .doc-card {
+      background: #e8d8f3;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
+      border-radius: 12px;
+    }
+
+    .card img,
+    .doc-card img,
+    .comment-card img {
+      width:100%;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 0.8rem;
+    }
+
+    .price {
+      color: #c04aa0;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    button {
+      border: none;
+      background: #e6c7f5;
+      color: #4a235a;
+      padding: 0.5rem 1.4rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #f7c1dd;
+      transform: translateY(-3px);
+    }
+
+    .comment-card {
+      padding: 1.2rem;
+    }
+
+    .comment-emoji {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .map {
+      height: 400px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .contacts {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer {
+      background: #6a2c91;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width:768px) {
+
+      .pasteles-grid,
+      .bocaditos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width:1024px) {
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #f3d9f4;
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .pasteles-grid,
+      .bocaditos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .catalogo-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    .ubicacion-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .ubicacion-info {
+      background: #caa6e8;
+      /* lila pastel */
+      color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .ubicacion-info h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.3rem;
+      color: #ffffff;
+    }
+
+    @media (max-width:768px) {
+      .ubicacion-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width:480px) {
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+
+    }
+
+    .doc-card embed {
+      width: 100%;
+      height: 220px;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+    }
+
+    .catalog-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1.4rem;
+      background: #e6c7f5;
+      color: #4a235a;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .catalog-link:hover {
+      background: #f7c1dd;
+      transform: translateY(-3px);
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #f3d9f4;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+
+      #menu-toggle:checked+.hamburger+ul {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      nav li ul {
+        position: static;
+      }
+
+      .pasteles-grid,
+      .bocaditos-grid,
+      .catalogo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+ 
